@@ -14,7 +14,7 @@ def greetings():
     return {"Hello there Welcome to Stroke Prediction API"}
 
 
-@app.post("/predict")
+@app.get("/predict")
 def predict(request:Human):
     age=request.age
     hypertension = request.hypertension
@@ -39,8 +39,7 @@ def predict(request:Human):
     smoking_status_smokes
     ])
     predict=model.predict_proba([dic])
-    predict1=model.predict([dic])
-    return {"There are {} of getting Stroke {}.Stay Safe".format(predict[0][1]*100,predict1)}
+    return {"There are {} of getting Stroke.Stay Safe".format(predict[0][1]*100)}
 
 if __name__=="__main__":
     uvicorn.run(app)
