@@ -14,7 +14,7 @@ def greetings():
     return {"Hello there Welcome to Stroke Prediction API"}
 
 
-@app.get("/predict")
+@app.post("/predict")
 def predict(request:Human):
     age=request.age
     hypertension = request.hypertension
