@@ -39,7 +39,7 @@ def predict(request:Human):
     smoking_status_smokes
     ])
     predict=model.predict_proba([dic])
-    return {"The chance of getting stroke is ":predict[0][1]*100}
+    return {"The chance of getting stroke is ":predict[0][1]}
 
 if __name__=="__main__":
     uvicorn.run(app)
